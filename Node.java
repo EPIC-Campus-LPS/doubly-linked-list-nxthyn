@@ -1,53 +1,64 @@
 public class Node<E> {
 
-    private E node;
-
+    private E value;
+    private Node<E> next, previous;
 
     public Node() {
 
-        node = null;
-
-    }
-    public Node(E n) {
-
-        node = n;
+        value = null;
+        next = null;
+        previous = null;
 
     }
 
-    public E get() {
+    public Node(E val) {
 
-        return node;
-
-    }
-
-    public void set(E n) {
-
-        node = n;
+        value = val;
 
     }
 
-    public E getPreviousNode() {
+    public Node(E val, Node<E> n) {
 
-
-
-    }
-
-    public E getNextNode() {
-
-
+        value = val;
+        next = n;
 
     }
 
-    public void setPreviousNode(E n) {
+    public E getNodeValue() {
 
+        return value;
 
+    }
+
+    public Node<E> getNextNode() {
+
+        return next;
 
     }
 
-    public void setNextNode(E n) {
+    public Node<E> getPreviousNode() {
 
-
+        return previous;
 
     }
+
+    public void setNodeValue(E val) {
+
+        value = val;
+
+    }
+
+    public void setNextNode(Node<E> n) {
+
+        next = n;
+
+    }
+
+    public void setPreviousNode(Node<E> n) {
+
+        previous = n;
+
+    }
+
 
 }
