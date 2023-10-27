@@ -1,22 +1,54 @@
-public class DoublyLinkedListTest {
+import static org.junit.jupiter.api.Assertions.*;
 
-    public static void main(String[] args) {
+class DoublyLinkedListTest {
 
-        //DoublyLinkedList list = new DoublyLinkedList(new Node<Integer>(1), new Node<Integer>(2));
+    @org.junit.jupiter.api.Test
+    void add() {
         DoublyLinkedList list = new DoublyLinkedList();
-
         list.add(1);
         list.add(2);
-  
-
-        System.out.println(list.size());
-        System.out.println(list);
-
-        list.remove(0);
-
-        System.out.println("Size: " + list.size());
-        System.out.println(list);
-
+        list.add(3);
+        assertEquals("[1, 2, 3]",list.toString());
     }
 
+    @org.junit.jupiter.api.Test
+    void testAdd() {
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.add(0,1);
+        list.add(0,2);
+        list.add(0,3);
+        assertEquals("[3, 2, 1]", list.toString());
+    }
+
+    @org.junit.jupiter.api.Test
+    void remove() {
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.remove();
+        assertEquals("[1, 2, 3]", list.toString());
+    }
+
+    @org.junit.jupiter.api.Test
+    void testRemove() {
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.remove(2);
+        assertEquals("[1, 2, 4]", list.toString());
+    }
+
+    @org.junit.jupiter.api.Test
+    void set() {
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.set(0,2);
+        assertEquals("[2, 2, 3]", list.toString());
+    }
 }

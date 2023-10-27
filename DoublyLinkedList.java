@@ -127,6 +127,16 @@ public class DoublyLinkedList<E> {
 
             }
 
+            if (index == 0) {
+
+                Node temp = head;
+                head = new Node(element);
+                head.setNextNode(temp);
+                size++;
+                return;
+
+            }
+
             Node<E> counter = head;
             for (int i = 0; i < index - 1; i++) { // gets a node equal to the one before the passed index
 
