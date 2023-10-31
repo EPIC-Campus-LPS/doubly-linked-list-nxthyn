@@ -257,7 +257,7 @@ public class DoublyLinkedList<E> {
      * @param element
      * 
      */
-    public void set(int index, E element) {
+    public E set(int index, E element) {
 
         try { // if index is in bounds
             if (size == 0) { // if LinkedList is empty
@@ -268,8 +268,9 @@ public class DoublyLinkedList<E> {
 
             if (index == 0) { // if the head tail is called
 
+                E temp = (E) head.getNodeValue();
                 head.setNodeValue(element);
-                return;
+                return temp;
 
             }
 
@@ -279,8 +280,9 @@ public class DoublyLinkedList<E> {
                 counter = counter.getNextNode();
 
             }
-
+            E tempVal = (E) counter.getNodeValue();
             counter.setNodeValue(element); // replaces value with new element
+            return tempVal;
 
         } catch (Exception e) { // if index is out of bounds
 
