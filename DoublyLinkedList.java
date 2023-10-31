@@ -116,7 +116,7 @@ public class DoublyLinkedList<E> {
 
             }
 
-            if (index == size) { // if last index+1 is chosen
+            if (index == size+1) { // if last index+1 is chosen
 
                 Node<E> temp = tail; // stores the tail reference
                 tail.setNextNode(new Node<E>(element)); // creates new node after tail
